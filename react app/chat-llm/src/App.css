@@ -1,0 +1,117 @@
+/* App.css */
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333; /* Dark grey background for the whole page */
+  color: white; /* Text color for better contrast on dark background */
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.chat-container {
+  width: 100%; /* Makes the chat container fill the width of the App */
+  height: 90vh; /* You can adjust the height as needed */
+  background: #282c34; /* Dark background for the chat container */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for a 3D effect */
+  border-radius: 8px; /* Rounded corners for the chat container */
+}
+
+.chat-header {
+  background: #1c1c1e; /* Slightly lighter grey for the header */
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column; /* Messages appear top to bottom */
+}
+
+.chat-message {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 18px;
+  display: inline-block;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+.chat-message.user {
+  background: #0b93f6; /* Blue background for user messages */
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-message.llm, .chat-message.typing {
+  background: #4a4a4a; /* Darker grey for LLM messages */
+  color: white;
+  align-self: flex-start;
+}
+
+.chat-footer {
+  background: #1c1c1e; /* Footer with the same color as the header */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #555; /* Border color for the input */
+  border-radius: 18px;
+  background: #555; /* Dark background for the input */
+  color: white; /* Text color for the input */
+  font-size: 1rem;
+  outline: none; /* Removes the default focus outline */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 18px;
+  background: #0b93f6; /* Blue background for the send button */
+  color: white; /* Text color for the send button */
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none; /* Removes the default focus outline */
+}
+
+button:hover {
+  background: #0973cc; /* A slightly darker blue for the hover state */
+}
+
+/* Ensure everything is sized correctly with box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Add some responsiveness to the chat container on smaller screens */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 95%; /* Take slightly less width on small screens */
+    height: 95vh; /* And slightly less height */
+  }
+  
+  .chat-header, .chat-footer {
+    padding: 15px;
+  }
+
+  .chat-message {
+    max-width: 90%; /* Allow chat messages to take more width */
+  }
+}
